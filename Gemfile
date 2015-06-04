@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # A lightweight templating engine. Read more: http://slim-lang.com/
 gem 'slim-rails', '~> 3.0.1'
 
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'semantic-ui-sass', '~> 1.12.3.0'
 
 gem 'devise', '~> 3.5.1'
 
