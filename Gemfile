@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # A lightweight templating engine. Read more: http://slim-lang.com/
 gem 'slim-rails', '~> 3.0.1'
 
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
