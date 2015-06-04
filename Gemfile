@@ -48,4 +48,6 @@ group :development, :test do
 
   # Loads environment variables from `.env`.
   gem 'dotenv-rails', '~> 2.0.1'
+
+  gem 'thin', '~> 1.6.3'
 end
