@@ -28,6 +28,8 @@ gem 'slim-rails', '~> 3.0.1'
 
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
+gem 'devise', '~> 3.5.1'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
