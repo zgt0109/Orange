@@ -1,0 +1,19 @@
+zh-CN:
+  activerecord:
+    models:
+      enterprise: 企业用户
+      enterprise_profile: 企业资料
+    attributes:
+      
+      common: &common
+        email: 电子邮箱
+        password: 账户密码
+        password_confirmation: 重复密码
+        province: 省份
+        city: 城市
+        district: 区/县
+        address: 详细地址
+
+      enterprise_profile:
+        <<: *common
+        name: 公司名称
