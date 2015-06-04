@@ -1,0 +1,21 @@
+= render partial: 'layouts/errors', locals: {title: '更新资料失败', error: @profile}
+= form_for @profile, url: enterprise_profile_path, html:{ class: 'ui form'} do |f|
+  .field.nine.wide
+    = f.label :name
+    = f.text_field :name
+
+  .fields.city-group
+    .field.three.wide
+      = f.label :province
+      = f.select :province, options_for_select(ChinaCity.list),  {include_blank: true}, {class: 'select city-select ui dropdown'}
+    .field.three.wide
+      = f.label :city
+      = f.select :city, [],  {include_blank: true}, {class: 'select city-select ui dropdown'}
+    .field.three.wide
+      = f.label :district
+      = f.select :district, [],  {include_blank: true}, {class: 'select city-select ui dropdown'}
+  .field.nine.wide
+      = f.label :address
+      = f.text_field :address
+  .field
+    = f.submit class: 'ui button positive'

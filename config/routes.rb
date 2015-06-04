@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   # 企业用户
   devise_for :enterprises
+  namespace :enterprise do
+    resource :profile
+  end
 
   # 省市区级联选择
   mount ChinaCity::Engine => '/china_city'

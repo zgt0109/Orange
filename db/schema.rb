@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604064238) do
+ActiveRecord::Schema.define(version: 20150604090334) do
+
+  create_table "enterprise_profiles", force: :cascade do |t|
+    t.integer  "enterprise_id", limit: 4
+    t.string   "name",          limit: 20, null: false
+    t.string   "province",      limit: 6,  null: false
+    t.string   "city",          limit: 6,  null: false
+    t.string   "district",      limit: 6,  null: false
+    t.string   "address",       limit: 50, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "enterprise_profiles", ["enterprise_id"], name: "index_enterprise_profiles_on_enterprise_id", using: :btree
 
   create_table "enterprises", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -31,4 +44,5 @@ ActiveRecord::Schema.define(version: 20150604064238) do
   add_index "enterprises", ["email"], name: "index_enterprises_on_email", unique: true, using: :btree
   add_index "enterprises", ["reset_password_token"], name: "index_enterprises_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "enterprise_profiles", "enterprises"
 end

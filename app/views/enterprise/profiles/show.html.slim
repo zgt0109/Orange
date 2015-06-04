@@ -1,0 +1,11 @@
+.ui.segment
+  p
+    | 公司名称:
+    = @profile.name
+
+  p
+    | 公司地址: #{ChinaCity.get(@profile.province) }
+    = ChinaCity.get(@profile.province)
+    = ChinaCity.get(@profile.city)
+    = ChinaCity.get(@profile.district)
+    = @profile.address
