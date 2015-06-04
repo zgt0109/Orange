@@ -56,4 +56,6 @@ group :development, :test do
   gem 'dotenv-rails', '~> 2.0.1'
 
   gem 'thin', '~> 1.6.3'
+
+  gem 'annotate', '~> 2.6.10'
 end
