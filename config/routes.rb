@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :enterprises
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+  # 企业用户
+  devise_for :enterprises
+
+  # 省市区级联选择
+  mount ChinaCity::Engine => '/china_city'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
