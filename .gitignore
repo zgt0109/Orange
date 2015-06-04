@@ -13,3 +13,4 @@
 /tmp
 .vagrant
 vendor/bundle
+.env
