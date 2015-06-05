@@ -1,8 +1,12 @@
 = render partial: 'layouts/errors', locals: {title: '更新资料失败', error: @profile}
 = form_for @profile, url: enterprise_profile_path, html:{ class: 'ui form'} do |f|
-  .field.nine.wide
-    = f.label :name
-    = f.text_field :name
+  .fields
+    .field.six.wide
+      = f.label :name
+      = f.text_field :name
+    .field.three.wide
+      = f.label :shop
+      = f.text_field :shop
 
   .fields.city-group
     .field.three.wide
@@ -17,5 +21,8 @@
   .field.nine.wide
       = f.label :address
       = f.text_field :address
+  .field.nine.wide
+    = f.label :intro
+    = f.text_area :intro
   .field
     = f.submit class: 'ui button positive'

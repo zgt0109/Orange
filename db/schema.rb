@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604090334) do
+ActiveRecord::Schema.define(version: 20150605022239) do
 
   create_table "enterprise_profiles", force: :cascade do |t|
     t.integer  "enterprise_id", limit: 4
-    t.string   "name",          limit: 20, null: false
-    t.string   "province",      limit: 6,  null: false
-    t.string   "city",          limit: 6,  null: false
-    t.string   "district",      limit: 6,  null: false
-    t.string   "address",       limit: 50, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",          limit: 20,    null: false
+    t.string   "province",      limit: 6,     null: false
+    t.string   "city",          limit: 6,     null: false
+    t.string   "district",      limit: 6,     null: false
+    t.string   "address",       limit: 50,    null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "shop",          limit: 20
+    t.text     "intro",         limit: 65535
   end
 
   add_index "enterprise_profiles", ["enterprise_id"], name: "index_enterprise_profiles_on_enterprise_id", using: :btree

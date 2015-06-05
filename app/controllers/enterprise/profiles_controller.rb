@@ -20,6 +20,7 @@ class Enterprise::ProfilesController < ApplicationController
   private
 
     def enterprise_profile_params
-      params.require(:enterprise_profile).permit(:name, :province, :city, :district, :address)
+      params.require(:enterprise_profile).permit(:name, :province,
+                    :city, :district, :address, :shop, :intro)
     end
 end

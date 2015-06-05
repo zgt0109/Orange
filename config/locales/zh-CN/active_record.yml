@@ -4,7 +4,7 @@ zh-CN:
       enterprise: 企业用户
       enterprise_profile: 企业资料
     attributes:
-      
+
       common: &common
         email: 电子邮箱
         password: 账户密码
@@ -17,3 +17,5 @@ zh-CN:
       enterprise_profile:
         <<: *common
         name: 公司名称
+        shop: 店名
+        intro: 简介

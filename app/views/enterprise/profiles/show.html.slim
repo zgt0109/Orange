@@ -1,11 +1,13 @@
 .ui.segment
   p
     | 公司名称:
-    = @profile.name
+    = render_enterprise_profile_name(@profile)
+
 
   p
-    | 公司地址: #{ChinaCity.get(@profile.province) }
-    = ChinaCity.get(@profile.province)
-    = ChinaCity.get(@profile.city)
-    = ChinaCity.get(@profile.district)
-    = @profile.address
+    | 公司地址:
+    = render_enterprise_profile_address(@profile)
+
+  p
+    | 公司简介:
+    = @profile.intro
