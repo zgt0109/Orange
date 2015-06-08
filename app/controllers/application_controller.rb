@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :login_require
   layout :main_layout
 
   private
@@ -14,5 +15,9 @@ class ApplicationController < ActionController::Base
       else
         'application'
       end
+    end
+
+    def login_require
+      authenticate_enterprise! if params[:controller] =~ /^enterprise/
     end
 end

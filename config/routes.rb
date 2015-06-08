@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   # 企业用户
-  devise_for :enterprises
+
   namespace :enterprise do
+    root 'welcome#index'
     resource :profile
   end
+
+  # 用户登录系统
+  devise_for :enterprises, path: 'enterprise'
 
   # 省市区级联选择
   mount ChinaCity::Engine => '/china_city'
