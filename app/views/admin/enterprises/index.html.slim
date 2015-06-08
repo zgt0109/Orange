@@ -1,0 +1,13 @@
+table.ui.table
+    thead
+      tr
+        th #
+        th 公司名称
+        th 公司地址
+        th 添加时间
+    tbody
+      - @enterprises.each do |enterprise|
+        tr
+          td = enterprise.id
+          td = render_enterprise_profile_name(enterprise.profile)
+          td = render_enterprise_profile_address(enterprise.profile)
