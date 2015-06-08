@@ -8,3 +8,4 @@
 
 
 Enterprise.create(email:'ent_01@10000zhi.cn', password: 'password')
+Admin.create(email:'adm_01@10000zhi.cn', password: 'password')

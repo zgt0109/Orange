@@ -6,15 +6,20 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  # 企业用户
-
+  # 企业端
   namespace :enterprise do
     root 'welcome#index'
     resource :profile
   end
 
+  # 管理端
+  namespace :admin do
+    root 'welcome#index'
+  end
+
   # 用户登录系统
   devise_for :enterprises, path: 'enterprise'
+  devise_for :admins, path: 'admin'
 
   # 省市区级联选择
   mount ChinaCity::Engine => '/china_city'
