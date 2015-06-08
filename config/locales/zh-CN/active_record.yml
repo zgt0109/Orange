@@ -1,4 +1,12 @@
 zh-CN:
+  enumerize:
+    defaults:
+      channel:
+        qq: "QQ号码"
+        mobile: "手机"
+        email: "邮箱"
+
+
   activerecord:
     models:
       enterprise: 企业用户
@@ -19,3 +27,6 @@ zh-CN:
         name: 公司名称
         shop: 店名
         intro: 简介
+      enterprise_contact:
+        name: 联系人
+        body: 联系方式

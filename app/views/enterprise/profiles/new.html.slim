@@ -1,28 +1,46 @@
-= render partial: 'layouts/errors', locals: {title: '更新资料失败', error: @profile}
-= form_for @profile, url: enterprise_profile_path, html:{ class: 'ui form'} do |f|
-  .fields
-    .field.six.wide
-      = f.label :name
-      = f.text_field :name
-    .field.three.wide
-      = f.label :shop
-      = f.text_field :shop
+= render partial: 'layouts/errors', locals: {title: '更新资料失败', error: current_enterprise}
+= form_for current_enterprise, url: enterprise_profile_path, html:{ class: 'ui form'} do |f|
+  = f.fields_for :profile do | profile |
+    .fields
+      .field.six.wide
+        = profile.label :name
+        = profile.text_field :name
+      .field.three.wide
+        = profile.label :shop
+        = profile.text_field :shop
 
-  .fields.city-group
-    .field.three.wide
-      = f.label :province
-      = f.select :province, options_for_select(ChinaCity.list),  {include_blank: true}, {class: 'select city-select ui dropdown'}
-    .field.three.wide
-      = f.label :city
-      = f.select :city, [],  {include_blank: true}, {class: 'select city-select ui dropdown'}
-    .field.three.wide
-      = f.label :district
-      = f.select :district, [],  {include_blank: true}, {class: 'select city-select ui dropdown'}
-  .field.nine.wide
-      = f.label :address
-      = f.text_field :address
-  .field.nine.wide
-    = f.label :intro
-    = f.text_area :intro
+    .fields.city-group
+      .field.three.wide
+        = profile.label :province
+        = profile.select :province, options_for_select(ChinaCity.list),  {include_blank: true}, {class: 'select city-select ui dropdown'}
+      .field.three.wide
+        = profile.label :city
+        = profile.select :city, [],  {include_blank: true}, {class: 'select city-select ui dropdown'}
+      .field.three.wide
+        = profile.label :district
+        = profile.select :district, [],  {include_blank: true}, {class: 'select city-select ui dropdown'}
+    .field.nine.wide
+        = profile.label :address
+        = profile.text_field :address
+    .field.nine.wide
+      = profile.label :intro
+      = profile.text_area :intro
+
+  = f.fields_for :contacts do | contact |
+      .field.five.wide
+        .ui.segment
+          = contact.label :name
+          = contact.text_field :name
+
+          = contact.label :body
+
+          = contact.text_field :body
+          = contact.select :channel,
+                  EnterpriseContact.channel.options,
+                  {include_blank: false},{class: 'ui dropdown upward'}
+
+
+
+
   .field
     = f.submit class: 'ui button positive'
