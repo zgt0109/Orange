@@ -31,6 +31,7 @@ class Enterprise < ActiveRecord::Base
   with_options dependent: :destroy do |ent|
     ent.has_one :profile,class_name: 'EnterpriseProfile'
     ent.has_many :contacts, class_name: 'EnterpriseContact'
+    ent.has_many :positions
   end
 
   accepts_nested_attributes_for :profile
