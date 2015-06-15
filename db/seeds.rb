@@ -16,10 +16,25 @@ puts "Create System Position"
   Position.create(name: position, state: :confirmed)
 end
 
+puts "Create System Company"
+[
+  "中国移动", "中国联通", "长城宽带",
+  "招商银行", "建设银行", "工商银行",
+  "饿了吗", "天天果园", "支付宝",
+  "携程", "去哪儿", "途牛"
+].each do |company|
+ Company.create(name: company, state: :confirmed)
+end
+
+
 puts "Create Enterprise User"
 ent = Enterprise.new(email:'ent_01@10000zhi.cn', password: 'password')
 ["Rail工程师", "私人助理", "健身教练"].each do |position|
-    ent.positions.build(name: position)
+  ent.positions.build(name: position)
+end
+
+["益服集团", "钱多多", "玩艺儿"].each do |company|
+  ent.companies.build(name: company)
 end
 ent.save
 

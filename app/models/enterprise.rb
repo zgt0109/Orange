@@ -32,6 +32,7 @@ class Enterprise < ActiveRecord::Base
     ent.has_one :profile,class_name: 'EnterpriseProfile'
     ent.has_many :contacts, class_name: 'EnterpriseContact'
     ent.has_many :positions
+    ent.has_many :companies
   end
 
   accepts_nested_attributes_for :profile

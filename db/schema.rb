@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615075912) do
+ActiveRecord::Schema.define(version: 20150615083140) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(version: 20150615075912) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "companies", force: :cascade do |t|
+    t.integer  "enterprise_id", limit: 4
+    t.string   "name",          limit: 100
+    t.string   "state",         limit: 20
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "companies", ["enterprise_id"], name: "index_companies_on_enterprise_id", using: :btree
+  add_index "companies", ["name"], name: "index_companies_on_name", using: :btree
+  add_index "companies", ["state"], name: "index_companies_on_state", using: :btree
 
   create_table "enterprise_contacts", force: :cascade do |t|
     t.integer  "enterprise_id", limit: 4
@@ -87,6 +99,7 @@ ActiveRecord::Schema.define(version: 20150615075912) do
   add_index "positions", ["name"], name: "index_positions_on_name", using: :btree
   add_index "positions", ["state"], name: "index_positions_on_state", using: :btree
 
+  add_foreign_key "companies", "enterprises"
   add_foreign_key "enterprise_contacts", "enterprises"
   add_foreign_key "enterprise_profiles", "enterprises"
   add_foreign_key "positions", "enterprises"
