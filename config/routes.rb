@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :enterprise do
     root 'welcome#index'
     resource :profile
+    resources :contacts
   end
 
   # 管理端

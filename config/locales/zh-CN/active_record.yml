@@ -11,6 +11,7 @@ zh-CN:
     models:
       enterprise: 企业用户
       enterprise_profile: 企业资料
+      enterprise_contact: 企业联系方式
     attributes:
 
       common: &common

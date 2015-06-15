@@ -17,6 +17,10 @@
 
 class EnterpriseContact < ActiveRecord::Base
   extend Enumerize
-  enumerize :channel, in: [:qq, :mobile, :email]
+
   belongs_to :enterprise
+
+  validates_presence_of :name, :body
+
+  enumerize :channel, in: [:qq, :mobile, :email]
 end
