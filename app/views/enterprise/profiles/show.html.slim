@@ -1,13 +1,14 @@
-.ui.segment
-  p
-    | 公司名称:
-    = render_enterprise_profile_name(@profile)
+.column.ten.wide
+  .ui.segment
+    p
+      | 公司名称:
+      = render_enterprise_profile_name(@profile)
 
 
-  p
-    | 公司地址:
-    = render_enterprise_profile_address(@profile)
+    p
+      | 公司地址:
+      = render_enterprise_profile_address(@profile)
 
-  p
-    | 公司简介:
-    = @profile.intro
+    p
+      | 公司简介:
+      = @profile.intro

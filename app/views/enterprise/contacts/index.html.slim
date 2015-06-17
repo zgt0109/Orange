@@ -1,17 +1,20 @@
-= link_to '添加联系人', new_enterprise_contact_path, class: 'ui button positive'
+.column.sixteen.wide
+  = link_to '添加联系人', new_enterprise_contact_path, remote: true,
+      class: 'ui button positive'
 
-table.ui.table
-  thead
-    tr
-      th 姓名
-      th 号码
-      th 操作
-  tbody
-    - @contacts.each do |contact|
+
+  table.ui.table
+    thead
       tr
-        td = contact.name
-        td = contact.body
-        td = link_to enterprise_contact_path(contact),
-              method: :delete, class: 'ui button basic icon tiny red' do
-          i.icon.trash
-          | 删除
+        th 姓名
+        th 号码
+        th 操作
+    tbody
+      = render partial: "contact", collection: @contacts
+
+
+
+.ui.modal#newContact
+  i.close.icon
+  .header 添加联系人
+  .content

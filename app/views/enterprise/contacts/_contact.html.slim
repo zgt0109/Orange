@@ -1,0 +1,8 @@
+tr
+  td = contact.name
+  td = contact.body
+  td = link_to enterprise_contact_path(contact),
+        method: :delete, data:{confirm: "确认删除联系人: #{contact.name} 吗?", title: '删除联系人'},
+        class: 'ui button basic icon tiny red' do
+    i.icon.trash
+    | 删除

@@ -25,11 +25,10 @@ html
                 = link_to '退出', destroy_enterprise_session_path, class: 'item',
                                  method: 'delete'
     .ui.grid.page
-      .column
-        - flash.each do |name,msg|
-          div class="ui message #{name}"
-            p = msg
-        = yield
+      - flash.each do |name,msg|
+        div class="ui message #{name}"
+          p = msg
+      = yield
     javascript:
       $(document).ready(function(){
         $('.ui.dropdown').dropdown();

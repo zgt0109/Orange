@@ -1,0 +1,29 @@
+
+= form_for @profile, url: enterprise_profile_path, html:{ class: 'ui form'} do |f|
+  .fields
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :shop
+      = f.text_field :shop
+
+  .fields.city-group
+    .field
+      = f.label :province
+      = f.select :province, options_for_select(ChinaCity.list),  {include_blank: true}, {class: 'select city-select ui dropdown'}
+    .field
+      = f.label :city
+      = f.select :city, [],  {include_blank: true}, {class: 'select city-select ui dropdown'}
+    .field
+      = f.label :district
+      = f.select :district, [],  {include_blank: true}, {class: 'select city-select ui dropdown'}
+  .field
+      = f.label :address
+      = f.text_field :address
+  .field
+    = f.label :intro
+    = f.text_area :intro
+
+  .field
+    = f.submit class: 'ui button positive'

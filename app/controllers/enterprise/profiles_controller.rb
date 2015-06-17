@@ -1,14 +1,17 @@
 class Enterprise::ProfilesController < ApplicationController
   def new
-    current_enterprise.profile || current_enterprise.build_profile
-    current_enterprise.contacts.build
+    if current_enterprise.profile
+      @profile = current_enterprise.profile
+    else
+      @profile = EnterpriseProfile.new
+    end
   end
 
 
-  def update
-
-    if current_enterprise.update(enterprise_profile_params)
-
+  def create
+    @profile = current_enterprise.build_profile(profile_params)
+    if @profile.save
+      redirect_to enterprise_contacts_path
     else
       render :new
     end
@@ -20,10 +23,9 @@ class Enterprise::ProfilesController < ApplicationController
 
   private
 
-    def enterprise_profile_params
-      params.require(:enterprise).permit(
-        profile_attributes: [:name, :province, :city, :district, :address, :shop, :intro],
-        contacts_attributes: [:name, :body, :channel]
+    def profile_params
+      params.require(:enterprise_profile).permit(
+        :name, :province, :city, :district, :address, :shop, :intro
       )
     end
 end

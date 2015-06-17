@@ -1,0 +1,11 @@
+<% if @contact.errors.any? %>
+$("<%= j(
+  render partial: 'layouts/errors', locals: {title: '添加失败', error: @contact}
+) %>").prependTo("#newContact .content");
+<% else %>
+$("<%= j(
+  render partial: 'contact', object: @contact
+) %>").prependTo('table.ui.table tbody')
+$('#newContact').modal('hide');
+$('#new_enterprise_contact input[id]').val('');
+<% end %>

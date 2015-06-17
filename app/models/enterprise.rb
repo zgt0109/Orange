@@ -34,7 +34,4 @@ class Enterprise < ActiveRecord::Base
     ent.has_many :positions
     ent.has_many :companies
   end
-
-  accepts_nested_attributes_for :profile
-  accepts_nested_attributes_for :contacts
 end

@@ -9,11 +9,17 @@ class Enterprise::ContactsController < ApplicationController
 
   def create
     @contact = current_enterprise.contacts.build(contact_params)
-    if @contact.save
-      flash[:success] = '企业联系人添加成功'
-      redirect_to enterprise_contacts_path
-    else
-      render :new
+    respond_to do |format|
+      if @contact.save
+        format.html{
+          flash[:success] = '企业联系人添加成功'
+          redirect_to enterprise_contacts_path
+        }
+        format.js
+      else
+        format.html {  render :new }
+        format.js
+      end
     end
   end
 
