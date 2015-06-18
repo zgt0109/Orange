@@ -29,5 +29,5 @@ zh-CN:
         shop: 店名
         intro: 简介
       enterprise_contact:
-        name: 联系人
-        body: 联系方式
+        name: 姓名
+        gender: 性别

@@ -1,8 +1,9 @@
 = form_for @contact, remote: true, html:{class: 'ui form'} do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :body
-    = f.text_field :body
+  .fields
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :gender
+      = f.select :gender, [['先生', 1], ['女士', 0]], {}, {class: 'ui dropdown'}
   = f.submit class: 'ui button positive'
