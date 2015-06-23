@@ -1,0 +1,11 @@
+<% if @position.errors.any? %>
+$("<%= j(render partial: 'layouts/errors', 
+	locals: {title: '添加失败',error: @position}) %>")
+.prependTo("#newPosition .content");
+<% else %>
+$("<%= j(render partial: 'position', object: @position) %>")
+.prependTo("table.ui.table tbody");
+
+$('#newPosition').modal('hide');
+$('#new_admin_position input[id]').val('');
+<% end %>

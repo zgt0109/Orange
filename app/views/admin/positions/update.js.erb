@@ -1,0 +1,10 @@
+<% if @position.errors.any?%>
+$("<%= j(render partial: 'layouts/errors', 
+	locals: {title: '修改失败',error: @position}) %>")
+.prependTo("#editPosition .content");
+<% else %>
+$("#position_<%= @position.id %>").replaceWith(
+"<%= j(render partial: 'position', object: @position) %>"
+);
+$('#editPosition').modal('hide');
+<% end %>

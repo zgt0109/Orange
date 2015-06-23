@@ -1,0 +1,7 @@
+<%= form_for [:admin ,@position],remote: true, html:{class: 'ui form'}  do |p| %>
+	<div class="field">
+  		<%= p.label :name %>
+  		<%= p.text_field :name %>
+  	</div>
+    <%= p.submit class: 'ui button positive' %>
+<% end %>

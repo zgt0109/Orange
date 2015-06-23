@@ -1,0 +1,51 @@
+
+<div class="ui segment ">
+ <div class="ui two column middle aligned grid">
+    <div class="column">
+     <%= link_to '新增岗位', new_admin_position_path,remote: true, class: 'ui button positive' %>
+    </div>
+    <div class="column">
+        <div class="ui icon input right fluid">
+            <input type="text" placeholder="岗位搜索">
+            <i class="search icon"></i>
+        </div>
+    </div>
+  </div>  
+  <table class="ui celled striped table">
+    <thead>
+       <tr>
+          <th>岗位信息</th>
+          <th colspan="2">岗位操作</th>
+       </tr>
+    </thead>
+    <tbody>
+    <%= render partial: "position", collection: @position %>
+    </tbody>
+  </table>
+
+  <!-- tanchukuang -->
+   <div class="ui modal" id="newPosition">
+    <i class="close icon"></i>
+    <div class="header">新增岗位</div>
+    <div class="content"></div>
+   </div>
+
+   <div class="ui modal" id="editPosition">
+    <i class="close icon"></i>
+    <div class="header">修改岗位</div>
+    <div class="content"></div>
+   </div>
+
+   <div class="ui pagination menu">
+    <a class="icon item" href="">
+      <i class="left arrow icon"></i></a >
+    <a class="active item" href="">1</a >
+    <a class="item" href="">2</a >
+    <a class="item" href="">3</a >
+    <div class="disabled item">...</div>
+    <a class="item" href="">10</a >
+    <a class="item" href="">11</a >
+    <a class="icon item" href="">
+      <i class="right arrow icon"></i></a >
+   </div>
+</div>
