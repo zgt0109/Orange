@@ -1,0 +1,10 @@
+<% if @profile.errors.any?%>
+$("<%= j(render partial: 'layouts/errors', 
+	locals: {title: '修改失败',error: @profile}) %>")
+.prependTo("#editProfile .content");
+<% else %>
+$("#profile_<%= @profile.id %>").replaceWith(
+"<%= j(render partial: 'profile', object: @profile) %>"
+);
+$('#editProfile').modal('hide');
+<% end %>

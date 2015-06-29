@@ -16,7 +16,7 @@ html
     .ui.segment.inverted.red
       .ui.grid.page
         .ui.menu.inverted.red
-          = link_to '公司审核', '#', class: 'item'
+          = link_to '管理员资料完善', new_admin_profile_path, remote: true, class: 'item'
           .right.menu
             .ui.dropdown.item
               = current_admin.email

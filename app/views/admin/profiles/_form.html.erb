@@ -1,0 +1,18 @@
+<%= form_for @profile,remote: true,html:{class: 'ui form'} do |p| %>
+ 	<div class="field three wide">
+ 		<div class="field">
+ 		<%= p.label :name %>
+ 		<%= p.text_field :name %>
+
+ 		<%= p.label :contact %>
+ 		<%= p.text_field :contact %>
+
+ 		<%= p.label :email %>
+ 		<%= p.text_field :email %>
+
+ 		<%= p.label :qq %>
+ 		<%= p.text_field :qq %>
+ 		</div>
+ 		<%= p.submit class: 'ui button positive' %>
+   </div>
+<% end %>

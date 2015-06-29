@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     root 'welcome#index'
     resources :enterprises, only: [:index]
     resources :positions
+    resources :profiles
+    resources :articles
   end
 
   # 用户登录系统

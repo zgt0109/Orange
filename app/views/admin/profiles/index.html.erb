@@ -1,0 +1,31 @@
+<%= link_to '完善管理员资料', new_admin_profile_path, remote: true,class: 'ui button positive' %>
+
+<table class="ui table">
+	<thead>
+	   <tr>
+	      <th>姓名</th>
+	      <th>联系方式</th>
+	      <th>邮箱</th>
+	      <th>QQ号码</th>
+	      <th colspan="2">操作</th>
+	   </tr>
+	</thead>
+	<tbody>
+	<%= render partial: "profile", collection: @profile %>
+	</tbody>
+</table>
+
+<div class="ui modal" id="newProfile">
+   <i class="close icon"></i>
+   <div class="header">管理员资料</div>
+   <div class="content"></div>
+</div>
+
+<div class="ui modal" id="editProfile">
+   <i class="close icon"></i>
+   <div class="header">修改管理员资料</div>
+   <div class="content"></div>
+</div>
+
+<div class="ui modal" id="">
+</div>

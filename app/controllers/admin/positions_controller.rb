@@ -32,7 +32,7 @@ class Admin::PositionsController < ApplicationController
    def destroy
     @position.destroy
     flash[:success] = '岗位删除成功'
-    redirect_to :action => :index 
+    redirect_to admin_positions_url 
   end
 
   def create

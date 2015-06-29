@@ -10,6 +10,7 @@ zh-CN:
     models:
       enterprise: 企业用户
       position: 岗位
+      admin_profile: 管理员资料
       enterprise_profile: 企业资料
       enterprise_contact: 企业联系方式
     attributes:
@@ -33,3 +34,8 @@ zh-CN:
         gender: 性别
       position:
         name: 岗位名称
+      admin_profile:
+        name: 姓名
+        contact: 联系方式
+        email: 邮箱
+        qq: QQ号码

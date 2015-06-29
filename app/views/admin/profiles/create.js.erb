@@ -1,0 +1,11 @@
+<% if @profile.errors.any? %>
+$("<%= j(render partial: 'layouts/errors', 
+	locals: {title: '添加失败',error: @profile}) %>")
+.prependTo("#newProfile .content");
+<% else %>
+$("<%= j(render partial: 'profile', object: @profile) %>")
+.prependTo("table.ui.table tbody");
+
+$('#newProfile').modal('hide');
+$('#new_admin_profile input[id]').val('');
+<% end %>

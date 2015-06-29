@@ -1,0 +1,27 @@
+<%= link_to '完善', new_admin_article_path,remote: true, class: 'ui button positive' %> 
+
+<table class="ui table">
+	<thead>
+	   <tr>
+	      <th>标题</th>
+	      <th>内容</th>
+	      <th colspan="2">操作</th>
+	   </tr>
+	</thead>
+	<tbody>
+	<%= render partial: "article", collection: @article %>
+	</tbody>
+</table>
+
+
+<div class="ui modal" id="newArticle">
+   <i class="close icon"></i>
+   <div class="header">新增</div>
+   <div class="content"></div>
+</div>
+
+<div class="ui modal" id="editArticle">
+   <i class="close icon"></i>
+   <div class="header">EDIT</div>
+   <div class="content"></div>
+</div>

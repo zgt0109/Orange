@@ -1,0 +1,11 @@
+<% if @article.errors.any? %>
+$("<%= j(render partial: 'layouts/errors', 
+	locals: {title: '添加失败',error: @article}) %>")
+.prependTo("#newArticle .content");
+<% else %>
+$("<%= j(render partial: 'article', object: @article) %>")
+.prependTo("table.ui.table tbody");
+
+$('#newArticle').modal('hide');
+$('#new_admin_article input[id]').val('');
+<% end %>

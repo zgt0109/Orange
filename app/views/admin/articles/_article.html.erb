@@ -1,0 +1,15 @@
+<tr id="article_<%= article.id %>">
+  <td><%= article.name %></td>
+  <td><%= article.content %></td>
+  <td><%= link_to edit_admin_article_path(article),
+  remote: true, class: 'ui button basic icon small green' do  %>
+      <i class="edit icon"></i>修改
+      <% end %>
+   </td>
+   <td><%= link_to admin_article_path(article),
+   method: :delete , data: {confirm: 'Are you Sure?'}, 
+   class: 'ui button basic icon small red' do %>
+      <i class="trash icon"></i>删除
+      <% end %>
+   </td>
+</tr>

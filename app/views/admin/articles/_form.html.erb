@@ -1,0 +1,13 @@
+<%= form_for [:admin, @article],
+    remote: true,html:{class: 'ui form'} do |a| %>
+ 	<div class="field three wide">
+ 		<div class="field">
+ 		<%= a.label :name %>
+ 		<%= a.text_field :name %>
+
+ 		<%= a.label :content %>
+ 		<%= a.text_field :content %>
+ 		</div>
+ 		<%= a.submit class: 'ui button positive' %>
+   </div>
+<% end %>
